@@ -3,6 +3,10 @@ import { Nav } from '../../../interface/nav';
 import { name } from './../../../../../node_modules/@leichtgewicht/ip-codec/types/index.d';
 import { Component, Output } from '@angular/core';
 
+interface sidenav {
+  collapse: boolean;
+  creenWidth: number;
+}
 @Component({
   selector: 'app-header',
   standalone: false,
@@ -10,8 +14,9 @@ import { Component, Output } from '@angular/core';
   styleUrls: ['./header.component.css', '../../../../styles.css'],
 })
 export class HeaderComponent {
-  @Output() select = new EventEmitter<boolean>();
+  @Output() onFocusSideNav = new EventEmitter<sidenav>();
   collapse: boolean = false;
+  creenWidth = 0;
   nav: Nav[] = [
     {
       name: 'Danh Mục',
@@ -61,9 +66,13 @@ export class HeaderComponent {
     }
   }
 
-  //Xử lý từ lớp con chuyền qua lớp tra
-  toggleCollapsed() {
+  //Xử lý từ lớp con chuyền qua lớp cha
+  toggleCollapsed(): void {
     this.collapse = !this.collapse;
-    this.select.emit(this.collapse);
+    // console.log('ddadss', this.collapse);
+    this.onFocusSideNav.emit({
+      collapse: this.collapse,
+      creenWidth: this.creenWidth,
+    });
   }
 }

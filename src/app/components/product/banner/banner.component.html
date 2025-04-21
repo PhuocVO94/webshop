@@ -1,7 +1,10 @@
 <div class="container">
   <div class="banner-content">
-    <div class="banner--side--nav p-10">
-      <!-- [className]="collapsed == true ? 'active' : null" -->
+    <div
+      #sidebarNav
+      class="banner--side--nav p-10"
+      [ngClass]="{ ' menulist': _collapse }"
+    >
       <ul class="banner--side--nav-list">
         <li class="banner--side--nav-list-item" *ngFor="let item of side">
           <a href="#" class="banner--side--nav-list-item-link">
@@ -12,12 +15,15 @@
         </li>
       </ul>
     </div>
+
+    <div *ngIf="_collapse" class="overlay"></div>
     <div class="banner--tab-menu p-10">
       <ul>
         <li>
           <app-button
             [backgroundcolor]="'red'"
             [value]="'scadscdas'"
+            (click)="getBodyBanner()"
           ></app-button>
         </li>
         <li>2</li>

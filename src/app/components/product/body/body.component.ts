@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
+interface SideNav {
+  collapse: boolean;
+  creenWidth: number;
+}
 @Component({
   selector: 'app-body',
   standalone: false,
@@ -7,7 +11,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./body.component.css', '../../../../styles.css'],
 })
 export class BodyComponent {
-  handlerToggle(collapse: boolean) {
-    console.log('Lớp con truyền qua lớp cha-->', collapse);
+  @Input() _collapse = false;
+
+  @Input() _screenWidth = 0;
+
+  onFocusSideNav(sidenav: SideNav) {
+    this._collapse = sidenav.collapse;
+    this._screenWidth = sidenav.creenWidth;
   }
 }

@@ -1,8 +1,8 @@
 <header class="">
   <div class="header">
-    <app-header (select)="handlerToggle($event)"></app-header>
+    <app-header (onFocusSideNav)="onFocusSideNav($event)"></app-header>
   </div>
 </header>
 <section class="banner">
-  <app-banner></app-banner>
+  <app-banner [_collapse]="_collapse"></app-banner>
 </section>

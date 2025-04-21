@@ -12,6 +12,7 @@
   transform: translateX(0);
   z-index: -100;
 }
+
 /* .banner--side--nav.active {
   transition: all 0.3s ease;
   transform: translateX(0);
@@ -33,14 +34,14 @@
   align-content: center;
   padding: 0.938rem;
 }
-*/ .banner--tab-menu {
-  background-color: #007bff;
-  border: 1px solid #007bff;
+.banner--tab-menu {
+  /* background-color: #007bff; */
+  /* border: 1px solid #007bff; */
 }
 
 @media screen and (min-width: 768px) {
   .banner--side--nav {
-    position: initial;
+    position: relative;
     height: auto;
     transform: translateX(0);
     opacity: 1;
@@ -49,6 +50,31 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     z-index: 100;
   }
+
+  .menulist {
+    background-color: white;
+    /* position: absolute; */
+    /* top: 50px; Tùy chỉnh vị trí */
+    left: 0;
+    width: 100%; /* Tùy chỉnh kích thước */
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 10;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ phần còn lại */
+    z-index: 5;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+
   .banner--side--nav-list {
     padding-left: initial;
   }

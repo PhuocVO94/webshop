@@ -49,8 +49,4 @@ export class ButtonComponent implements OnChanges {
       this.handlePropertyChange('color', 'black');
     }
   }
-
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
 }
