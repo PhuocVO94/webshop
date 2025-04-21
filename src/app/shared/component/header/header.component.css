@@ -1,0 +1,289 @@
+:root {
+  --primary-color: #007bff; /* Màu xanh dương cho các button hoặc các thành phần chính */
+  --red-color: #ea0f0f; /* Màu nền nhẹ cho các phần hiển thị */
+  --text-color: #333333; /* Màu chữ tối để dễ đọc */
+  --card-background: #ffffff; /* Nền của card sản phẩm */
+  --hover-color: #f1f1f1;
+  --transition: 0.3s ease-in-out; /* Màu hover nhẹ */
+  --h1--font-size: 1.5rem; /* Kích thước chữ cho h1 */
+  --tiny-font-size: 0.75rem; /* Kích thước chữ cho các phần tử nhỏ */
+  --z-tooltip: 10;
+  --z-fixed: 100; /* Độ ưu tiên của các thành phần */
+  --normal-font-size: 0.938rem;
+  --hue: 174;
+  --sat: 63;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --firt-color-alt: hsl(var(--hue), var(--sat), 36%);
+
+  --tittle-color-dark: hsl(var(--hue), 12%, 1.5rem);
+  --title-color-light: hsl(var(--hue), var(--sat), 96%);
+  --text-color-light: hsl(var(--hue), var(--sat), 96%);
+  --text-color-dark: hsl(var(--hue), var(--sat), 20%);
+  --body-color: hsl(var(--hue), var(--sat), 96%);
+  /* Kích thước chữ cho các phần tử bình thường */
+}
+
+/* Áp dụng màu đỏ cho header */
+header {
+  font-size: var(--normal-font-size);
+  color: var(--hover-color);
+  background-color: var(--red-color); /* Màu đỏ cho header */
+  color: rgb(241, 238, 238); /* Màu chữ trắng */
+  /* font-size: 24px; */
+  font-weight: bold;
+  width: 100%;
+  min-width: 372px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+.header-container {
+  /* height: 5.35rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  /* border: 1px solid #ccc; */
+  font-size: var(--h1--font-size);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  /* width: 20%; */
+  justify-content: space-between;
+  align-items: center;
+  flex: 1.5;
+}
+.logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+  object-fit: cover;
+}
+.logo h1 {
+  font-size: var(--h1--font-size);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+  display: none;
+  color: var(--title-color-light);
+}
+
+.header-nav-location,
+.header-nav-search,
+.header-nav-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+.header-nav-search {
+  /* border: 1px solid #ccc; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Để các phần tử có khoảng cách */
+  align-items: center;
+  flex: 7;
+}
+.header-nav-search ul {
+  /* border: 1px solid #ccc; */
+  display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử trong ul */
+  flex-direction: row; /* Đặt chiều ngang cho các phần tử */
+  justify-content: space-between; /* Để các phần tử có khoảng cách */
+  list-style: none;
+  width: 100%; /* Đảm bảo ul chiếm hết chiều rộng */
+  /* flex-wrap: wrap; */
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+  /* Cho phép các mục wrap khi không đủ chỗ */
+}
+
+.header-nav-search ul li {
+  /* list-style: none; */
+  cursor: pointer;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  height: 2rem;
+  align-items: center;
+  flex-grow: 0; /* Đảm bảo các mục không chiếm không gian thừa */
+  flex-shrink: 1;
+}
+.li-input {
+  font-size: 1em;
+  background-color: var(--hover-color);
+  width: 90%;
+  height: 2rem;
+  margin-bottom: 5px;
+  display: flex;
+  padding: 20px 0px;
+  /* border: 1px solid gray; */
+}
+.btn-search {
+  display: flex;
+  width: 10%;
+  height: 100%;
+  background-color: var(--hover-color);
+  color: white;
+  /* border: 1px solid var(--primary-color); */
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: var(--transition);
+  /* text-align: center; */
+  justify-content: center;
+  padding-bottom: 25px;
+}
+.li-content {
+  width: 50%;
+  /* background-color: var(--hover-color); */
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  opacity: 0.5;
+  box-shadow: 0 -1px 12px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s ease-in-out;
+}
+.li-content:hover {
+  background-color: var(--hover-color);
+  opacity: 0.8;
+  transform: scale(1.05);
+  color: var(--text-color);
+  /* Tăng kích thước nhẹ khi hover */
+}
+
+.header-nav-search ul li input {
+  background-color: var(--hover-color);
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 2rem;
+  font-size: 16px;
+  flex: 7; /* Thanh tìm kiếm chiếm 7 phần */
+  margin-right: 5px;
+  /* Khoảng cách giữa thanh tìm kiếm và các item */
+}
+
+.header-nav-search ul li i {
+  font-size: 1.5rem;
+}
+
+.header-nav-search ul li span {
+  flex: 3; /* Các mục "Home" sẽ chiếm 3 phần */
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: #ffffff;
+}
+
+.header-nav-user {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+  background-color: var(--card-background);
+  box-shadow: 0 -1px 5px #0000001a;
+  transition: var(--transition);
+  color: var(--text-color);
+  row-gap: 0.25em;
+  font-weight: 600;
+  flex: 4;
+  flex-direction: row;
+  /* border: 1px solid #ccc; */
+  /* color: var(--tittle-color-dark); */
+}
+.header-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.25em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.header-nav-item:hover {
+  background-color: var(--hover-color);
+  opacity: 0.8;
+  color: var(--text-color);
+  /* border-radius: 10px; */
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+.header-nav-item i {
+  font-size: 1.5rem;
+}
+
+.header-nav-item a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+@media (min-width: 62em) {
+  .header-nav-search,
+  .header-nav-user {
+    position: initial;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    /* height: 4rem; */
+    border-radius: initial;
+    background-color: initial;
+    box-shadow: initial;
+    transition: initial;
+    color: initial;
+    row-gap: initial;
+  }
+  .logo h1 {
+    display: block;
+  }
+  .li-input {
+    width: 50%;
+    margin-bottom: initial;
+  }
+  .li-content {
+    color: #ffffff;
+    width: 20%;
+    padding: 20px;
+    flex-direction: row;
+  }
+  .header-nav-item {
+    color: var(--text-color-light);
+    flex-direction: row;
+
+    /* padding: 15px; */
+    /* border: 1px solid #ccc; */
+    height: 100%;
+    border-radius: 5px;
+    margin-right: 5px;
+    text-overflow: ellipsis;
+  }
+  .header-nav-item i {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .header-nav-item a {
+    color: #ffffff;
+  }
+}

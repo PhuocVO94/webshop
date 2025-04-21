@@ -1,0 +1,106 @@
+.banner-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.banner--side--nav {
+  position: fixed;
+  width: 5rem;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  z-index: -100;
+}
+/* .banner--side--nav.active {
+  transition: all 0.3s ease;
+  transform: translateX(0);
+
+  transform: translateX(0);
+} */
+
+/* .banner--side--nav-list-item-link {
+  display: flex;
+  align-content: center;
+  height: 1rem;
+  font-weight: 700;
+}
+/*  */
+.banner--side--nav-list-item {
+  display: block;
+  cursor: pointer;
+  flex-direction: column;
+  align-content: center;
+  padding: 0.938rem;
+}
+*/ .banner--tab-menu {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+@media screen and (min-width: 768px) {
+  .banner--side--nav {
+    position: initial;
+    height: auto;
+    transform: translateX(0);
+    opacity: 1;
+    flex: 2;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 100;
+  }
+  .banner--side--nav-list {
+    padding-left: initial;
+  }
+
+  .banner--side--nav-list-item {
+    list-style: initial;
+    cursor: pointer;
+    /* border: 1px solid gray; */
+    padding: 0.5rem;
+    font-weight: 700;
+  }
+  .banner--side--nav-list-item:hover {
+    background-color: lightgray;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .banner--side--nav-list-item-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .banner--side--nav-list-item-link:hover {
+    color: red;
+    transition: all 0.3s ease;
+    /* background-color: grey;/ */
+  }
+  .side--nav-icon {
+    font-size: 22px;
+    width: 1rem;
+    height: 100%;
+    min-width: 1rem;
+    text-align: center;
+    margin: 0 0.2rem;
+    height: 100%;
+    font-weight: 200;
+    font-size: 14px;
+    color: gray;
+  }
+  .banner--tab-menu {
+    flex: 6;
+    /* border-radius: 15px; */
+  }
+  .banner-tab-list {
+    flex: 2;
+    /* border-radius: 15px; */
+  }
+  .banner--tab-menu ul li {
+    display: block;
+  }
+
+  .banner--tab-menu ul li:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="banner-content">
+    <div class="banner--side--nav p-10">
+      <!-- [className]="collapsed == true ? 'active' : null" -->
+      <ul class="banner--side--nav-list">
+        <li class="banner--side--nav-list-item" *ngFor="let item of side">
+          <a href="#" class="banner--side--nav-list-item-link">
+            <i class="side--nav-icon">{{ item.icon }}</i>
+            <span class="side--nav--text">{{ item.name }}</span>
+            <i class="side--nav-icon">></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="banner--tab-menu p-10">
+      <ul>
+        <li>
+          <app-button
+            [backgroundcolor]="'red'"
+            [value]="'scadscdas'"
+          ></app-button>
+        </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+    <div class="banner-tab-list p-10">BUTTON</div>
+  </div>
+</div>

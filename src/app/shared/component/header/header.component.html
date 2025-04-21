@@ -1,0 +1,57 @@
+<header>
+  <div class="container">
+    <nav class="header-container">
+      <div class="logo p-15">
+        <img src="assets/logo.png" />
+        <h1 class="logo-text">ABCDEF</h1>
+      </div>
+      <!-- Locattion start -->
+
+      <!-- Locattion end -->
+      <!-- Search start -->
+      <div class="header-nav-search p-15">
+        <ul>
+          <li class="li-input">
+            <button class="btn-search">
+              <mat-icon
+                style="color: black"
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="home"
+                >home</mat-icon
+              >
+              <!-- <i class="fa-solid fa-magnifying-glass" style="color: black"></i> -->
+            </button>
+            <input type="text" placeholder="Bạn cần tìm gì?" />
+          </li>
+          <li class="li-content" (click)="toggleCollapsed()">
+            <a>
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Danh Mục</span>
+            </a>
+          </li>
+          <li class="li-content">
+            <a href="">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Cửa Hàng</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search end -->
+      <!-- User start -->
+      <div class="header-nav-user p-10">
+        <div
+          class="header-nav-item"
+          *ngFor="let item of nav"
+          [class.active]="item.active"
+          (click)="handlerToger(item)"
+        >
+          <i class="fa-solid fa-layer-group"></i>
+          <a [routerLink]="item.url">{{ item.name }}</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

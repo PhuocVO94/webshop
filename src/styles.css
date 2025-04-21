@@ -1,1 +1,148 @@
+*,
+* :before,
+* :after {
+  margin: 0 auto;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #007bff; /* Màu xanh dương cho các button hoặc các thành phần chính */
+  --red-color: #ea0f0f; /* Màu nền nhẹ cho các phần hiển thị */
+  --text-color: #333333; /* Màu chữ tối để dễ đọc */
+  --card-background: #ffffff; /* Nền của card sản phẩm */
+  --hover-color: #f1f1f1; /* Màu hover nhẹ */
+  --normal-font-size: 0.938rem; /* Kích thước chữ cho các phần tử bình thường */
+}
+
+/* Áp dụng cho sản phẩm cellphones */
+.product-card {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.product-card:hover {
+  background-color: var(--hover-color); /* Hiệu ứng hover */
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--border-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Thiết lập lại font chữ mặc định cho tất cả */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Thiết lập lại kiểu cho các tiêu đề */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* Loại bỏ border của tất cả các link */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: #007bff 1px solid;
+}
+
+/* Reset cho hình ảnh */
+img {
+  max-width: 100%;
+  height: auto;
+}
+.p-15 {
+  padding: 15px;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-5 {
+  padding: 5px;
+}
+.m-15 {
+  margin: 15px;
+}
+.m-10 {
+  margin: 10px;
+}
+.m-5 {
+  margin: 5px;
+}
+ul {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+  display: inline;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+}
+/* Thiết lập lại kiểu cho các tiêu đề */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
